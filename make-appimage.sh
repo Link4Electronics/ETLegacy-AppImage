@@ -13,7 +13,7 @@ export DESKTOP=/usr/share/applications/com.etlegacy.ETLegacy.$ARCH.desktop
 export DEPLOY_OPENGL=1
 
 # Deploy dependencies
-quick-sharun /usr/bin/etl.$ARCH /usr/lib/etlegacy/*
+quick-sharun /usr/bin/etl.* /usr/lib/etlegacy/*
 
 # Additional changes can be done in between here
 
