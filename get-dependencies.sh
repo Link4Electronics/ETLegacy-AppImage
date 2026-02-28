@@ -13,7 +13,7 @@ echo "---------------------------------------------------------------"
 get-debloated-pkgs --add-common --prefer-nano
 
 # Comment this out if you need an AUR package
-make-aur-package enemy-territory-data
+make-aur-package enemy-territory
 make-aur-package etlegacy-mod-git
 make-aur-package etlegacy-git
 
