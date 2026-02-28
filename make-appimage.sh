@@ -10,7 +10,8 @@ export ADD_HOOKS="self-updater.bg.hook"
 export UPINFO="gh-releases-zsync|${GITHUB_REPOSITORY%/*}|${GITHUB_REPOSITORY#*/}|latest|*$ARCH.AppImage.zsync"
 export ICON=/usr/share/icons/hicolor/scalable/apps/etl.svg
 export DESKTOP=/usr/share/applications/com.etlegacy.ETLegacy.$ARCH.desktop
-export STARTUPWMCLASS=
+export APPNAME=ET Legacy
+export STARTUPWMCLASS=etl.$ARCH
 export DEPLOY_OPENGL=1
 
 # Deploy dependencies
