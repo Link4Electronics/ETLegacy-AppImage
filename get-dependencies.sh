@@ -14,7 +14,7 @@ get-debloated-pkgs --add-common --prefer-nano
 
 # Comment this out if you need an AUR package
 make-aur-package enemy-territory
-make-aur-package etlegacy-git
+PRE_BUILD_CMDS="sed -i 's/etlegacy\.x86_64\.service/etlegacy.\$ARCH.service/g' ./PKGBUILD" make-aur-package etlegacy-git
 
 # If the application needs to be manually built that has to be done down here
 
