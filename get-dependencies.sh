@@ -6,15 +6,19 @@ ARCH=$(uname -m)
 
 echo "Installing package dependencies..."
 echo "---------------------------------------------------------------"
-pacman -Syu --noconfirm libdecor
+#pacman -Syu --noconfirm
 
 echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
-get-debloated-pkgs --add-common --prefer-nano
+get-debloated-pkgs --add-common --prefer-nano libdecor-mini
 
 # Comment this out if you need an AUR package
 make-aur-package enemy-territory
-make-aur-package etlegacy-git
+if [ "$ARCH" = "aarch64" ]; then
+  PRE_BUILD_CMDS="sed -i 's/etlegacy\.x86_64\.service/etlegacy.aarch64.service/g' ./PKGBUILD" make-aur-package etlegacy-git
+else
+  make-aur-package etlegacy-git
+fi
 
 # If the application needs to be manually built that has to be done down here
 
