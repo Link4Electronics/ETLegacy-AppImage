@@ -14,7 +14,11 @@ get-debloated-pkgs --add-common --prefer-nano
 
 # Comment this out if you need an AUR package
 make-aur-package enemy-territory
-PRE_BUILD_CMDS="sed -i 's/etlegacy\.x86_64\.service/etlegacy.\$ARCH.service/g' ./PKGBUILD" make-aur-package etlegacy-git
+if [ "$ARCH" = "aarch64" ]; then
+  PRE_BUILD_CMDS="sed -i 's/etlegacy\.x86_64\.service/etlegacy.\aarch64.service/g' ./PKGBUILD" make-aur-package etlegacy-git
+else
+  make-aur-package etlegacy-git
+fi
 
 # If the application needs to be manually built that has to be done down here
 
